@@ -63,32 +63,126 @@ const projetos = [
     },
 
     // ---------- PROJETOS ACADÊMICOS ----------
+    // disciplina: agrupa os cards por matéria (a ordem segue a lista "disciplinas" abaixo)
+    // Os arquivos ficam em projetos/academicos/<disciplina>/
+
+    // Lógica de Programação
     {
-        titulo: "Projeto Acadêmico 1",
+        titulo: "Caderno de Exercícios em Python",
         tipo: "academico",
-        descricao: "Descreva o problema, o que você fez e o resultado. Mencione a disciplina.",
-        tecnologias: ["Python", "Pandas"],
-        links: []
+        disciplina: "Lógica de Programação",
+        periodo: "2026",
+        papel: "Atividades das aulas",
+        capaCodigo: "def par_ou_impar(valor_1, valor_2):\n  return \"PAR\" if (valor_1 + valor_2) % 2 == 0 \\\n         else \"IMPAR\"\n\nmatch escolha_dia:\n  case 1: print(\"Hoje é SEGUNDA-FEIRA\")",
+        descricao: "Notebook no Google Colab com os exercícios das aulas de Lógica de Programação, da primeira variável até estruturas condicionais.",
+        destaques: [
+            "Variáveis, tipos de dados, entradas (input) e formatação de saída com f-strings",
+            "Calculadora com operadores aritméticos e testes de precedência",
+            "Listas, tuplas, dicionários e importação de bibliotecas",
+            "Jogo \"Par ou Ímpar\" com função própria",
+            "Desvio condicional com if/elif/else e match case"
+        ],
+        tecnologias: ["Python", "Google Colab"],
+        links: [{ rotulo: "Abrir no Google Colab", url: "https://colab.research.google.com/drive/19BWujYyYQAlu9SZgKap3XbYY8V0YyZ-R?usp=sharing" }]
+    },
+
+    // Banco de Dados
+    {
+        titulo: "Modelo Conceitual — Delivery de Comida (iFood)",
+        tipo: "academico",
+        disciplina: "Banco de Dados",
+        periodo: "Ago 2026",
+        papel: "Exercício individual",
+        capa: "projetos/academicos/banco-de-dados/capa-ifood.jpg",
+        descricao: "Modelagem conceitual de um aplicativo de delivery no estilo iFood, identificando as entidades do negócio e seus atributos.",
+        destaques: [
+            "8 entidades: Cliente, Endereço, Restaurante, Categoria, Seção, Produto, Adicional e Pedido",
+            "Definição de atributos identificadores (CPF, CNPJ, IDs)",
+            "Atributos de preço, frete, status e tempo de preparo"
+        ],
+        tecnologias: ["Modelagem conceitual", "brModelo"],
+        links: [{ rotulo: "Ver diagrama (PDF)", url: "projetos/academicos/banco-de-dados/Exercicio_Ifood_PedroImanichi.pdf" }]
     },
     {
-        titulo: "Projeto Acadêmico 2",
+        titulo: "Modelo Conceitual — Sistema Hospitalar",
         tipo: "academico",
-        descricao: "Trabalho em grupo da disciplina X — explique seu papel no time.",
-        tecnologias: ["Java"],
-        links: []
+        disciplina: "Banco de Dados",
+        periodo: "Ago 2026",
+        papel: "Exercício individual",
+        capa: "projetos/academicos/banco-de-dados/capa-hospital-conceitual.jpg",
+        descricao: "Levantamento das entidades e atributos de um hospital completo: pacientes, equipe médica, internações, exames, receitas e faturamento.",
+        destaques: [
+            "19 entidades, de Cadastro de Paciente a Faturamento Hospitalar",
+            "Atributos do domínio da saúde: CRM, COREN, CID-10, registro ANS",
+            "Base para o modelo ER com relacionamentos (próximo projeto)"
+        ],
+        tecnologias: ["Modelagem conceitual", "brModelo"],
+        links: [{ rotulo: "Ver diagrama (PDF)", url: "projetos/academicos/banco-de-dados/Exercicio_Hospital_PedroImanichi.pdf" }]
+    },
+    {
+        titulo: "Modelo ER — Hospital com Relacionamentos",
+        tipo: "academico",
+        disciplina: "Banco de Dados",
+        periodo: "Set 2026",
+        papel: "Correção da Aula 05",
+        capa: "projetos/academicos/banco-de-dados/capa-hospital-er.jpg",
+        descricao: "Versão revisada do modelo hospitalar, agora com relacionamentos e cardinalidades entre as entidades.",
+        destaques: [
+            "Relacionamentos como Atende, Solicita, Realiza, Auxilia e Aplica",
+            "Cardinalidades (1,1), (0,n), (1,n) definidas para cada ligação",
+            "Fluxo completo: consulta → exame → prescrição → internação"
+        ],
+        tecnologias: ["Modelo Entidade-Relacionamento", "brModelo"],
+        links: [{ rotulo: "Ver diagrama (PDF)", url: "projetos/academicos/banco-de-dados/Correcao_Aula05_PedroImanichi.pdf" }]
+    },
+    {
+        titulo: "Modelo Lógico — Pet Shop",
+        tipo: "academico",
+        disciplina: "Banco de Dados",
+        papel: "Exercício individual",
+        capa: "projetos/academicos/banco-de-dados/capa-petshop.jpg",
+        descricao: "Modelo lógico de um pet shop pronto para virar banco de dados, com tabelas, tipos de dados e chaves.",
+        destaques: [
+            "5 tabelas: Cliente, Pet, Serviço, Funcionário e Agendamento",
+            "Chaves primárias e estrangeiras ligando pet, serviço e funcionário ao agendamento",
+            "Tipos de dados definidos (INT, VARCHAR, DECIMAL, DATETIME)"
+        ],
+        tecnologias: ["Modelo lógico", "MySQL Workbench", "SQL"],
+        links: [{ rotulo: "Ver modelo (PNG)", url: "projetos/academicos/banco-de-dados/modelo_petshop_PedroImanichi.png" }]
+    },
+
+    // Engenharia de Software
+    {
+        titulo: "Micro-seminário — A Evolução dos Dispositivos de Armazenamento",
+        tipo: "academico",
+        disciplina: "Engenharia de Software",
+        periodo: "Ago 2026",
+        papel: "Trabalho em grupo (5 integrantes)",
+        capa: "projetos/academicos/engenharia-de-software/capa-seminario.jpg",
+        descricao: "Apresentação sobre a evolução do armazenamento de dados e o impacto dos SSDs NVMe na velocidade de execução.",
+        destaques: [
+            "Linha do tempo: cartões perfurados, fitas, disquetes, HDD, SSD SATA e NVMe",
+            "Comparativo SATA × PCIe e latência × taxa de transferência",
+            "Por que o NVMe é mais rápido e onde ele faz diferença no uso real",
+            "Quiz interativo com a turma ao final"
+        ],
+        tecnologias: ["Apresentação", "Hardware", "Trabalho em equipe"],
+        links: [{ rotulo: "Baixar slides (.pptx)", url: "projetos/academicos/engenharia-de-software/seminario-armazenamento-nvme.pptx" }]
     }
 ];
 
-const rotulos = { pessoal: "Pessoal", academico: "Acadêmico" };
+// Ordem em que as disciplinas aparecem na seção de projetos acadêmicos
+const disciplinas = ["Lógica de Programação", "Banco de Dados", "Engenharia de Software"];
 
 // Escapa texto para exibir com segurança dentro do HTML
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
-// Numera cada projeto dentro da sua categoria: "Pessoal · 01", "Pessoal · 02"...
+// Rótulo de cada card: "Pessoal · 01" ou, nos acadêmicos, a disciplina ("Banco de Dados · 02")
 const contagem = {};
 projetos.forEach(p => {
-    contagem[p.tipo] = (contagem[p.tipo] || 0) + 1;
-    p.numero = String(contagem[p.tipo]).padStart(2, "0");
+    p.rotulo = p.tipo === "academico" ? p.disciplina : "Pessoal";
+    contagem[p.rotulo] = (contagem[p.rotulo] || 0) + 1;
+    p.numero = String(contagem[p.rotulo]).padStart(2, "0");
 });
 
 function renderCapa(p) {
@@ -97,16 +191,40 @@ function renderCapa(p) {
     return "";
 }
 
-function renderProjetos(filtro = "todos") {
-    const grid = document.getElementById("projectsGrid");
-    const lista = filtro === "todos" ? projetos : projetos.filter(p => p.tipo === filtro);
+function renderGrupo(titulo, lista, classe = "") {
+    if (!lista.length) return "";
+    const qtd = `${lista.length} projeto${lista.length > 1 ? "s" : ""}`;
+    return `
+        <div class="project-group ${classe}">
+            <h3 class="project-group__title">${esc(titulo)} <span>${qtd}</span></h3>
+            <div class="projects">${lista.map(renderCard).join("")}</div>
+        </div>`;
+}
 
-    grid.innerHTML = lista.map(p => `
+function renderProjetos(filtro = "todos") {
+    const container = document.getElementById("projectsGrid");
+    let html = "";
+
+    if (filtro !== "academico") {
+        html += `<h3 class="project-section-title">Projetos pessoais</h3>`;
+        html += `<div class="projects">${projetos.filter(p => p.tipo === "pessoal").map(renderCard).join("")}</div>`;
+    }
+    if (filtro !== "pessoal") {
+        html += `<h3 class="project-section-title">Projetos acadêmicos</h3>`;
+        html += disciplinas
+            .map(d => renderGrupo(d, projetos.filter(p => p.tipo === "academico" && p.disciplina === d), "project-group--subject"))
+            .join("");
+    }
+    container.innerHTML = html;
+}
+
+function renderCard(p) {
+    return `
         <article class="card">
             ${renderCapa(p)}
             <div class="card__body">
                 <div class="card__top">
-                    <span class="card__badge">${rotulos[p.tipo]} · ${p.numero}</span>
+                    <span class="card__badge">${esc(p.rotulo)} · ${p.numero}</span>
                     ${p.periodo ? `<span class="card__date">${p.periodo}</span>` : ""}
                 </div>
                 <h3>${esc(p.titulo)}</h3>
@@ -116,8 +234,7 @@ function renderProjetos(filtro = "todos") {
                 <ul class="card__tech">${p.tecnologias.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
                 ${p.links && p.links.length ? `<div class="card__links">${p.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${esc(l.rotulo)} →</a>`).join("")}</div>` : ""}
             </div>
-        </article>
-    `).join("");
+        </article>`;
 }
 
 // Filtros
