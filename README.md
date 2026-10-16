@@ -175,15 +175,5 @@ index.html ──carrega──▶ style.css     (aparência)
 3. No `script.js`, adicione um novo item na lista `projetos`, informando o `tipo` (`"pessoal"` ou `"academico"`), a `disciplina` (para acadêmicos), a `capa` e os `links` apontando para os arquivos da pasta criada.
 4. Se for uma disciplina nova, adicione o nome dela na lista `disciplinas` do `script.js`, que define a ordem das matérias no site.
 
----
-
-## Como visualizar o site
-
-- **Online:** pelo GitHub Pages, após ativá-lo em *Settings → Pages* com a branch `main`. O endereço fica no formato `https://imanichi.github.io/entrega_intermediaria/`.
-- **No computador:** dentro da pasta do repositório, execute o comando abaixo e acesse `http://localhost:8000` no navegador.
-
-  ```bash
-  python3 -m http.server 8000
-  ```
 
 **Tecnologias utilizadas:** HTML5, CSS3, JavaScript (sem frameworks), Google Fonts (Inter e JetBrains Mono) e GitHub Pages para hospedagem.
